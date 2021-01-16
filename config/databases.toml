@@ -1,0 +1,10 @@
+APP="MysqlConfig"
+[ENV.DEV]
+Host=         "127.0.0.1"
+Port=         3306
+User=         "root"
+Password=     ""
+DBName=       "ffal"
+MaxIdleConns= 10
+MaxOpenConns= 100
+MaxLifetime=  100
