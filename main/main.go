@@ -19,14 +19,14 @@ func init() {
 func main(){
 	//TODO 连接数据库
 	//读配置
-	paladin.Init()
+	paladin.Init("../configs")
 	ec := internal.DBConf{
 		EnvConf: make(map[string]internal.MysqlConf, 0),
 	}
-	if err := paladin.Get("databases.toml").UnmarshalTOML(&ec); err != nil {
+	if err := paladin.Get("mysql.toml").UnmarshalTOML(&ec); err != nil {
 		panic(err)
 	}
-	if err := paladin.Watch("databases.toml", &ec); err != nil {
+	if err := paladin.Watch("mysql.toml", &ec); err != nil {
 		panic(err)
 	}
 	var dbMetaConf internal.MysqlConf
